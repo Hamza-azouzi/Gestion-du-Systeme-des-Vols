@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="container-vols">
+
+  <li class="table-header">
+    <div >Nom Vol</div>
+    <div >Ville D</div>
+    <div >Ville A</div>
+    <div >Date D</div>
+    <div >Date A</div>
+    <div >Heure D</div>
+    <div >Heure A</div>
+    <!-- <div >ville Escale</div> -->
+    <!-- <div >prix</div> -->
+    <div >Resrever</div>
+  </li>
+
+  <%for(let i = 0 ; i< vols.length ; i++){%>
+    <li  class="vols-d">
+      <div  data-label="Nom Vol"><%=vols[i].nom_vol%></div>
+      <div  data-label="Ville depart"><%=vols[i].ville_D%></div>
+      <div  data-label="Ville Ariver"><%=vols[i].ville_A%></div>
+      <div  data-label="Date Depart"><%=vols[i].date_D.toLocaleDateString()%></div>
+      <div  data-label="Date Ariver"><%=vols[i].date_A.toLocaleDateString()%></div>
+      <div  data-label="Heure Depart"><%=vols[i].heur_D%></div>
+      <div  data-label="Heure Ariver"><%=vols[i].heur_A%></div> 
+       <!-- <div  data-label="Heure Ariver"><%=vols[i].ville_escal%></div> -->
+      <!-- <div  data-label="Heure Ariver"><%=vols[i].prix_vol%></div>  -->
+       <div ><a data-bs-toggle="modal" class="btn" href="/reservation/<%= vols[i].id_vol %>" role="button">Reserver</a></div>
+    </li>
+
+
+<%}%>
+
+
+</div>
+
+
+</body>
+</html>
